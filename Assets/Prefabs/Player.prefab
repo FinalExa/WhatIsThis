@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 985956572119685559}
   - component: {fileID: 955232331873241470}
+  - component: {fileID: 1268802413060011035}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -46,3 +47,45 @@ MonoBehaviour:
   baseAttack: 10
   baseHealth: 10
   baseLevel: 1
+--- !u!114 &1268802413060011035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3270258809371487172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0e457c6992bf342b4b340f5d654bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCharacter:
+    name: Pino
+    level: 0
+    baseHP: 0
+    maxHP: 0
+    currentHP: 0
+    baseMP: 0
+    maxMP: 0
+    currentMP: 0
+    baseStamina: 0
+    maxStamina: 0
+    currentStamina: 0
+    baseStrenght: 0
+    currentStrenght: 0
+    baseResistance: 0
+    currentResistance: 0
+    baseSpeed: 0
+    currentSpeed: 0
+    baseIntelligence: 0
+    currentIntelligence: 0
+    baseSwiftness: 0
+    currentSwiftness: 0
+    baseMagic: 0
+    currentMagic: 0
+    weaponDamage: 0
+    armor: 0
+    coins: 0
+    missChance: 0
+    experience: 0
+    experienceCap: 0

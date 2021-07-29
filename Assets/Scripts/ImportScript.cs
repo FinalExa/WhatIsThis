@@ -51,7 +51,7 @@ public class ImportScript : MonoBehaviour
         public int experience;
         public int experienceCap;
     }
-
+    public Character playerCharacter;
     public void GenerateEnemy(Character[] zoneEnemySpawn)
     {
         int enemyId = Random.Range(0, zoneEnemySpawn.Length - 1);
