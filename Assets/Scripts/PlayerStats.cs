@@ -14,6 +14,5 @@ public class PlayerStats : MonoBehaviour
         BaseAttack = baseAttack;
         BaseHealth = baseHealth;
         BaseLevel = baseLevel;
-        print(BaseAttack + " " + BaseHealth + " " + BaseLevel);
     }
 }

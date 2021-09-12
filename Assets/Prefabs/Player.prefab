@@ -59,33 +59,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0e457c6992bf342b4b340f5d654bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacter:
-    name: Pino
-    level: 0
-    baseHP: 0
+  thisBaseData:
+    name: Exa
+    level: 10
+    baseHP: 10
+    baseMP: 0
+    baseStamina: 10
+    baseStrenght: 10
+    baseResistance: 10
+    baseSpeed: 10
+    baseIntelligence: 10
+    baseSwiftness: 10
+    baseMagic: 0
+  thisCurrentData:
     maxHP: 0
     currentHP: 0
-    baseMP: 0
     maxMP: 0
     currentMP: 0
-    baseStamina: 0
     maxStamina: 0
     currentStamina: 0
-    baseStrenght: 0
     currentStrenght: 0
-    baseResistance: 0
     currentResistance: 0
-    baseSpeed: 0
     currentSpeed: 0
-    baseIntelligence: 0
     currentIntelligence: 0
-    baseSwiftness: 0
     currentSwiftness: 0
-    baseMagic: 0
     currentMagic: 0
     weaponDamage: 0
     armor: 0
-    coins: 0
     missChance: 0
+    coins: 0
     experience: 0
     experienceCap: 0
+  barStatBaseValue: 10
+  battleStatBaseValue: 5
+  barStatDivider: 3.45
+  battleStatDivider: 6.45
+  levelDivider: 600
