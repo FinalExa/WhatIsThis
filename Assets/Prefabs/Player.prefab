@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985956572119685559}
-  - component: {fileID: 955232331873241470}
   - component: {fileID: 1268802413060011035}
   m_Layer: 0
   m_Name: Player
@@ -28,25 +27,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &955232331873241470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3270258809371487172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9ea7e47585777344b3ff28d3ad3c7e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseAttack: 10
-  baseHealth: 10
-  baseLevel: 1
 --- !u!114 &1268802413060011035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,19 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0e457c6992bf342b4b340f5d654bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisBaseData:
-    name: Exa
-    level: 100
-    baseHP: 10
-    baseMP: 0
-    baseStamina: 10
-    baseStrenght: 10
-    baseResistance: 10
-    baseSpeed: 10
-    baseIntelligence: 10
-    baseSwiftness: 10
-    baseMagic: 0
-  thisCurrentData:
+  gameData: {fileID: 11400000, guid: 7e42955259f71f14f895313b90d83b8c, type: 2}
+  characterBaseData: {fileID: 11400000, guid: e84348a91e994d94cbcdea60c559a28a, type: 2}
+  characterCurrentData:
     maxHP: 0
     currentHP: 0
     maxMP: 0
@@ -90,8 +65,3 @@ MonoBehaviour:
     coins: 0
     experience: 0
     experienceCap: 0
-  barStatBaseValue: 10
-  battleStatBaseValue: 5
-  barStatDivider: 5
-  battleStatDivider: 10.5
-  levelDivider: 150
