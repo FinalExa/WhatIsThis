@@ -7,7 +7,6 @@ public class Character : MonoBehaviour
     public CharacterBaseData characterBaseData;
     public CharacterCurrentData characterCurrentData;
 
-
     private void Start()
     {
         GenerateCharacter();
@@ -45,38 +44,21 @@ public class Character : MonoBehaviour
     private void LevelOneCharacter()
     {
         characterCurrentData.maxHP = LevelUpStat(characterBaseData.baseHP, gameData.barStatBaseValue, 1, true);
-        characterCurrentData.maxStamina = LevelUpStat(characterBaseData.baseStamina, gameData.barStatBaseValue, 1, true);
-        characterCurrentData.currentStrenght = LevelUpStat(characterBaseData.baseStrenght, gameData.battleStatBaseValue, 1, false);
-        characterCurrentData.currentResistance = LevelUpStat(characterBaseData.baseResistance, gameData.battleStatBaseValue, 1, false);
+        characterCurrentData.currentAttack = LevelUpStat(characterBaseData.baseAttack, gameData.barStatBaseValue, 1, false);
+        characterCurrentData.currentDefense = LevelUpStat(characterBaseData.baseDefense, gameData.battleStatBaseValue, 1, false);
         characterCurrentData.currentSpeed = LevelUpStat(characterBaseData.baseSpeed, gameData.battleStatBaseValue, 1, false);
-        characterCurrentData.currentIntelligence = LevelUpStat(characterBaseData.baseIntelligence, gameData.battleStatBaseValue, 1, false);
-        characterCurrentData.currentSwiftness = LevelUpStat(characterBaseData.baseSwiftness, gameData.battleStatBaseValue, 1, false);
-        if (characterCurrentData.maxMP != 0)
-        {
-            characterCurrentData.maxMP = LevelUpStat(characterBaseData.baseMP, gameData.barStatBaseValue, 1, true);
-            characterCurrentData.currentMagic = LevelUpStat(characterBaseData.baseMagic, gameData.battleStatBaseValue, 1, false);
-        }
     }
     private void LevelUpCharacter(int curLevel)
     {
         characterCurrentData.maxHP = LevelUpStat(characterBaseData.baseHP, characterCurrentData.maxHP, curLevel, true);
-        characterCurrentData.maxStamina = LevelUpStat(characterBaseData.baseStamina, characterCurrentData.maxStamina, curLevel, true);
-        characterCurrentData.currentStrenght = LevelUpStat(characterBaseData.baseStrenght, characterCurrentData.currentStrenght, curLevel, false);
-        characterCurrentData.currentResistance = LevelUpStat(characterBaseData.baseResistance, characterCurrentData.currentResistance, curLevel, false);
+        characterCurrentData.currentAttack = LevelUpStat(characterBaseData.baseAttack, characterCurrentData.currentAttack, curLevel, false);
+        characterCurrentData.currentDefense = LevelUpStat(characterBaseData.baseDefense, characterCurrentData.currentDefense, curLevel, false);
         characterCurrentData.currentSpeed = LevelUpStat(characterBaseData.baseSpeed, characterCurrentData.currentSpeed, curLevel, false);
-        characterCurrentData.currentIntelligence = LevelUpStat(characterBaseData.baseIntelligence, characterCurrentData.currentIntelligence, curLevel, false);
-        characterCurrentData.currentSwiftness = LevelUpStat(characterBaseData.baseSwiftness, characterCurrentData.currentSwiftness, curLevel, false);
-        if (characterCurrentData.maxMP != 0)
-        {
-            characterCurrentData.maxMP = LevelUpStat(characterBaseData.baseMP, characterCurrentData.maxMP, curLevel, true);
-            characterCurrentData.currentMagic = LevelUpStat(characterBaseData.baseMagic, gameData.battleStatBaseValue, curLevel, false);
-        }
+
     }
     private void SetBarValues()
     {
         characterCurrentData.currentHP = characterCurrentData.maxHP;
-        characterCurrentData.currentStamina = characterCurrentData.maxStamina;
-        characterCurrentData.currentMP = characterCurrentData.maxMP;
     }
 
     /*public void PlayerLevelCheck(BaseData player)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   barStatBaseValue: 10
-  battleStatBaseValue: 5
+  battleStatBaseValue: 3
   barStatDivider: 5
   battleStatDivider: 10.5
   levelBarStatDivider: 100
