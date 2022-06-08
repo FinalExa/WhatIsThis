@@ -61,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisBaseData:
     name: Exa
-    level: 10
+    level: 100
     baseHP: 10
     baseMP: 0
     baseStamina: 10
@@ -92,6 +92,6 @@ MonoBehaviour:
     experienceCap: 0
   barStatBaseValue: 10
   battleStatBaseValue: 5
-  barStatDivider: 3.45
-  battleStatDivider: 6.45
-  levelDivider: 600
+  barStatDivider: 5
+  battleStatDivider: 10.5
+  levelDivider: 150

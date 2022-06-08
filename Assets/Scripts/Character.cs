@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Character : MonoBehaviour
 {
@@ -68,45 +69,45 @@ public class Character : MonoBehaviour
     public void GenerateCharacter()
     {
         LevelOneCharacter();
-        for (int i = 1; i < thisBaseData.level; i++) LevelUpCharacter();
+        for (int i = 1; i < thisBaseData.level; i++) LevelUpCharacter(i + 1);
         SetBarValues();
     }
     private float LevelUpStat(float baseStat, float baseValue, int level, float divider)
     {
         float stat;
-        float fixedIncrement = baseStat / divider;
-        float levelIncrement = level / levelDivider * fixedIncrement;
+        float fixedIncrement = (float)Math.Round(baseStat / divider, 4);
+        float levelIncrement = (float)Math.Round((level * fixedIncrement) / levelDivider, 4);
         stat = baseValue + fixedIncrement + levelIncrement;
         return stat;
     }
     private void LevelOneCharacter()
     {
-        thisCurrentData.maxHP = LevelUpStat(thisBaseData.baseHP, barStatBaseValue, thisBaseData.level, barStatDivider);
-        thisCurrentData.maxStamina = LevelUpStat(thisBaseData.baseStamina, barStatBaseValue, thisBaseData.level, barStatDivider);
-        thisCurrentData.currentStrenght = LevelUpStat(thisBaseData.baseStrenght, battleStatBaseValue, thisBaseData.level, battleStatDivider);
-        thisCurrentData.currentResistance = LevelUpStat(thisBaseData.baseResistance, battleStatBaseValue, thisBaseData.level, battleStatDivider);
-        thisCurrentData.currentSpeed = LevelUpStat(thisBaseData.baseSpeed, battleStatBaseValue, thisBaseData.level, battleStatDivider);
-        thisCurrentData.currentIntelligence = LevelUpStat(thisBaseData.baseIntelligence, battleStatBaseValue, thisBaseData.level, battleStatDivider);
-        thisCurrentData.currentSwiftness = LevelUpStat(thisBaseData.baseSwiftness, battleStatBaseValue, thisBaseData.level, battleStatDivider);
+        thisCurrentData.maxHP = LevelUpStat(thisBaseData.baseHP, barStatBaseValue, 1, barStatDivider);
+        thisCurrentData.maxStamina = LevelUpStat(thisBaseData.baseStamina, barStatBaseValue, 1, barStatDivider);
+        thisCurrentData.currentStrenght = LevelUpStat(thisBaseData.baseStrenght, battleStatBaseValue, 1, battleStatDivider);
+        thisCurrentData.currentResistance = LevelUpStat(thisBaseData.baseResistance, battleStatBaseValue, 1, battleStatDivider);
+        thisCurrentData.currentSpeed = LevelUpStat(thisBaseData.baseSpeed, battleStatBaseValue, 1, battleStatDivider);
+        thisCurrentData.currentIntelligence = LevelUpStat(thisBaseData.baseIntelligence, battleStatBaseValue, 1, battleStatDivider);
+        thisCurrentData.currentSwiftness = LevelUpStat(thisBaseData.baseSwiftness, battleStatBaseValue, 1, battleStatDivider);
         if (thisCurrentData.maxMP != 0)
         {
-            thisCurrentData.maxMP = LevelUpStat(thisBaseData.baseMP, barStatBaseValue, thisBaseData.level, barStatDivider);
-            thisCurrentData.currentMagic = LevelUpStat(thisBaseData.baseMagic, battleStatBaseValue, thisBaseData.level, battleStatDivider);
+            thisCurrentData.maxMP = LevelUpStat(thisBaseData.baseMP, barStatBaseValue, 1, barStatDivider);
+            thisCurrentData.currentMagic = LevelUpStat(thisBaseData.baseMagic, battleStatBaseValue, 1, battleStatDivider);
         }
     }
-    private void LevelUpCharacter()
+    private void LevelUpCharacter(int curLevel)
     {
-        thisCurrentData.maxHP = LevelUpStat(thisBaseData.baseHP, thisCurrentData.maxHP, thisBaseData.level, barStatDivider);
-        thisCurrentData.maxStamina = LevelUpStat(thisBaseData.baseStamina, thisCurrentData.maxStamina, thisBaseData.level, barStatDivider);
-        thisCurrentData.currentStrenght = LevelUpStat(thisBaseData.baseStrenght, thisCurrentData.currentStrenght, thisBaseData.level, battleStatDivider);
-        thisCurrentData.currentResistance = LevelUpStat(thisBaseData.baseResistance, thisCurrentData.currentResistance, thisBaseData.level, battleStatDivider);
-        thisCurrentData.currentSpeed = LevelUpStat(thisBaseData.baseSpeed, thisCurrentData.currentSpeed, thisBaseData.level, battleStatDivider);
-        thisCurrentData.currentIntelligence = LevelUpStat(thisBaseData.baseIntelligence, thisCurrentData.currentIntelligence, thisBaseData.level, battleStatDivider);
-        thisCurrentData.currentSwiftness = LevelUpStat(thisBaseData.baseSwiftness, thisCurrentData.currentSwiftness, thisBaseData.level, battleStatDivider);
+        thisCurrentData.maxHP = LevelUpStat(thisBaseData.baseHP, thisCurrentData.maxHP, curLevel, barStatDivider);
+        thisCurrentData.maxStamina = LevelUpStat(thisBaseData.baseStamina, thisCurrentData.maxStamina, curLevel, barStatDivider);
+        thisCurrentData.currentStrenght = LevelUpStat(thisBaseData.baseStrenght, thisCurrentData.currentStrenght, curLevel, battleStatDivider);
+        thisCurrentData.currentResistance = LevelUpStat(thisBaseData.baseResistance, thisCurrentData.currentResistance, curLevel, battleStatDivider);
+        thisCurrentData.currentSpeed = LevelUpStat(thisBaseData.baseSpeed, thisCurrentData.currentSpeed, curLevel, battleStatDivider);
+        thisCurrentData.currentIntelligence = LevelUpStat(thisBaseData.baseIntelligence, thisCurrentData.currentIntelligence, curLevel, battleStatDivider);
+        thisCurrentData.currentSwiftness = LevelUpStat(thisBaseData.baseSwiftness, thisCurrentData.currentSwiftness, curLevel, battleStatDivider);
         if (thisCurrentData.maxMP != 0)
         {
-            thisCurrentData.maxMP = LevelUpStat(thisBaseData.baseMP, thisCurrentData.maxMP, thisBaseData.level, barStatDivider);
-            thisCurrentData.currentMagic = LevelUpStat(thisBaseData.baseMagic, thisCurrentData.currentMagic, thisBaseData.level, battleStatDivider);
+            thisCurrentData.maxMP = LevelUpStat(thisBaseData.baseMP, thisCurrentData.maxMP, curLevel, barStatDivider);
+            thisCurrentData.currentMagic = LevelUpStat(thisBaseData.baseMagic, thisCurrentData.currentMagic, curLevel, battleStatDivider);
         }
     }
     private void SetBarValues()
