@@ -17,6 +17,7 @@ public class Character : MonoBehaviour
     }
     public void GenerateCharacter()
     {
+        characterCurrentData.characterName = characterBaseData.name;
         LevelOneCharacter();
         for (int i = 1; i < characterBaseData.level; i++) LevelUpCharacter(i + 1);
         SetBarValues();
@@ -54,7 +55,6 @@ public class Character : MonoBehaviour
         characterCurrentData.currentAttack = LevelUpStat(characterBaseData.baseAttack, characterCurrentData.currentAttack, curLevel, false);
         characterCurrentData.currentDefense = LevelUpStat(characterBaseData.baseDefense, characterCurrentData.currentDefense, curLevel, false);
         characterCurrentData.currentSpeed = LevelUpStat(characterBaseData.baseSpeed, characterCurrentData.currentSpeed, curLevel, false);
-
     }
     private void SetBarValues()
     {

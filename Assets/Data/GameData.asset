@@ -18,3 +18,8 @@ MonoBehaviour:
   battleStatDivider: 10.5
   levelBarStatDivider: 100
   levelBattleStatDivider: 200
+  attackMult: 15
+  weaponMult: 7.5
+  defenseMult: 10
+  armorMult: 5
+  damageDivider: 2.5

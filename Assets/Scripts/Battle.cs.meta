@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: ba0e457c6992bf342b4b340f5d654bc7
+guid: b5d0b886179275f429bb8e00c448b524
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - gameData: {fileID: 11400000, guid: 7e42955259f71f14f895313b90d83b8c, type: 2}
-  - characterBaseData: {instanceID: 0}
-  executionOrder: 100
+  - player: {instanceID: 0}
+  - enemy: {instanceID: 0}
+  executionOrder: 200
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 
